@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT | Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" type="imagex/png" href="./assets/iconGot.ico">
+</head>
+<body>
+    <div class="headerImg">
+        <div id="menu" class="header">
+            <h1>Game of Thrones</h1>
+            <ul>
+                <li class="current">Inicio</li>
+                <li>Login</li>
+                <li>Cadastro</li>
+            </ul>
+        </div>
+
+        <h2>
+            O site oficial <br> 
+            da série mais amada <br> 
+            do mundo!
+        </h2>
+    </div>
+
+    <div class="news">
+        <h1>Noticias de Game of Thrones</h1>
+
+        <h2>Trailer de House of the Dragon</h2>
+        <label>
+            Série derivada de Game of Thrones, intitulada House of The Dragon, <br> 
+            finalmente ganha seu primeiro trailer e encanta os fãs com sua <br>
+            atmosfera e enredo! O vídeo, por mais que seja curto e não revele <br>
+            muitos detalhes, deixou boas impressões e alcançou mais de 13 milhões <br>
+            de visualizações. A estréia é prevista para 1 de Janeiro de 2022. 
+            <br><br><br>
+            História é baseada no livro Fogo e Sangue de George R. R. Martin <br>
+            e se passa 200 anos antes dos acontecimentos de Game of Thrones. <br>
+            Como o nome sugere, a série será focada na Casa Targaryen e <br>
+            irá mostrar a desastrosa Guerra Civil que ficou conhecida como <br>
+            <span>A Dança dos Dragões</span>. 
+        </label>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fNwwt25mheo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="explore">
+        <h1>Explore nossa plataforma</h1>
+    </div>
+</body>
+
+<script>
+    (() => {
+        let menu = document.getElementById("menu");
+        window.addEventListener("scroll", () => {
+            window.scrollY > 0 ? menu.classList.add("fixedHeader") : menu.classList.remove("fixedHeader");
+        })
+    })()
+</script>
+</html>
