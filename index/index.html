@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoT | Home</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" type="imagex/png" href="./assets/iconGot.ico">
+    <link rel="shortcut icon" type="imagex/png" href="../assets/iconGot.ico">
 </head>
 <body>
     <div class="headerImg">
@@ -28,7 +29,7 @@
 
     <div class="news">
         <h1>Noticias de Game of Thrones</h1>
-
+    
         <h2>Trailer de House of the Dragon</h2>
         <label>
             Série derivada de Game of Thrones, intitulada House of The Dragon, <br> 
@@ -44,13 +45,27 @@
             <span>A Dança dos Dragões</span>. 
         </label>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/fNwwt25mheo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="carouselContainer">
+            <i class="fas fa-arrow-left" id="buttonPrev"></i>
+            <i class="fas fa-arrow-right" id="buttonNext"></i>
+            <div class="carouselSlide">
+                <img src="../assets/trailerIMG8.png" id="lastClone">
+                <img src="../assets/trailerIMG1.png">
+                <img src="../assets/trailerIMG2.png">
+                <img src="../assets/trailerIMG3.png">
+                <img src="../assets/trailerIMG5.png">
+                <img src="../assets/trailerIMG8.png">
+                <img src="../assets/trailerIMG1.png" id="firstClone">
+            </div>
+        </div>
     </div>
-
+<br><br><br><br><br><br><br><br><br><br>
     <div class="explore">
         <h1>Explore nossa plataforma</h1>
     </div>
 </body>
+
+<script src="slideScript.js"></script>
 
 <script>
     (() => {

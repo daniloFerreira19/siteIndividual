@@ -1,11 +1,11 @@
 @font-face {
     font-family: gotFont;
-    src: url(./assets/fontGoT.ttf);
+    src: url(../assets/fontGoT.ttf);
 }
 
 @font-face {
     font-family: montserrat;
-    src: url(./assets/fontMontSerrat.otf);
+    src: url(../assets/fontMontSerrat.otf);
 }
 
 *{
@@ -15,7 +15,7 @@
 } 
 
 .headerImg {
-    background-image: url(./assets/imgIndex.jpg);
+    background-image: url(../assets/imgIndex.jpg);
     height: 88vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -47,6 +47,10 @@
     font-family: gotFont !important;
 }
 
+.header {
+    transition: 0.50s;
+}
+
 .fixedHeader {
     position: fixed;
     background-color: #242633;
@@ -72,7 +76,7 @@
 }
     
 .news {
-    background-color: #FAF6F0;
+    background-color: #FCFEF0;
     height: 80vh;
     padding: 20px;
 }
@@ -89,9 +93,43 @@
     margin-bottom: 3%;
 }
 
-.news iframe {
+.carouselContainer {
+    width: 50%;
     margin-left: 50%;
-    margin-top: -100%;
+    margin-top: -30%;
+    overflow: hidden;
+    border: 5px solid black;
+    border-radius: 5px;
+    position: relative;
+
+}
+
+.carouselSlide {
+    display: flex;
+    width: 100%;
+    height: 450px;
+}
+
+#buttonPrev {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 3%;
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#buttonNext {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 3%;
+    font-size: 30px;
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .explore {
@@ -105,6 +143,3 @@
     font-family: gotFont !important;
     margin-top: 3%;
 }
-
-
-
