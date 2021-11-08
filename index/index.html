@@ -5,21 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoT | Home</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" type="imagex/png" href="../assets/iconGot.ico">
+    <link rel="icon" href="../assets/iconGot.ico">
 </head>
 <body>
+    <div class="modalContainer">
+        <div class="modal">
+                <h2>Entre na sua conta</h2>
+                <label for="inputEmail">Email:</label>
+                <input type="text" id="inputEmail">
+                <label for="inputSenha">Senha:</label>
+                <input type="text" id="inputSenha">
+                <button>Entrar</button>
+                <span class="closeModal">X</span>
+        </div>
+    </div>
+    <div class="registerModalContainer">
+        <div class="registerModal">
+            <h2>Preencha os campos</h2>
+            <label for="inputNome">Nome:</label>
+            <input type="text" id="inputNome">
+            <label for="inputEmail">Email:</label>
+            <input type="email" id="inputEmail">
+            <label for="inputSenha">Senha:</label>
+            <input type="password" id="inputSenha">
+            <label for="inputConfirmacao">Confirme sua senha:</label>
+            <input type="password" id="inputConfirmacao">
+            <button>Entrar</button>
+            <span class="closeRegister">X</span>
+    </div>
+    </div>
     <div class="headerImg">
         <div id="menu" class="header">
             <h1>Game of Thrones</h1>
             <ul>
-                <li class="current">Inicio</li>
-                <li>Login</li>
-                <li>Cadastro</li>
+                <li id="homeButton" class="current">Inicio</li>
+                <li id="loginButton">Login</li>
+                <li id="registerButton">Cadastro</li>
             </ul>
         </div>
-
         <h2>
             O site oficial <br> 
             da série mais amada <br> 
@@ -29,44 +54,90 @@
 
     <div class="news">
         <h1>Noticias de Game of Thrones</h1>
-    
-        <h2>Trailer de House of the Dragon</h2>
-        <label>
-            Série derivada de Game of Thrones, intitulada House of The Dragon, <br> 
-            finalmente ganha seu primeiro trailer e encanta os fãs com sua <br>
-            atmosfera e enredo! O vídeo, por mais que seja curto e não revele <br>
-            muitos detalhes, deixou boas impressões e alcançou mais de 13 milhões <br>
-            de visualizações. A estréia é prevista para 1 de Janeiro de 2022. 
-            <br><br><br>
-            História é baseada no livro Fogo e Sangue de George R. R. Martin <br>
-            e se passa 200 anos antes dos acontecimentos de Game of Thrones. <br>
-            Como o nome sugere, a série será focada na Casa Targaryen e <br>
-            irá mostrar a desastrosa Guerra Civil que ficou conhecida como <br>
-            <span>A Dança dos Dragões</span>. 
-        </label>
-
-        <div class="carouselContainer">
-            <i class="fas fa-arrow-left" id="buttonPrev"></i>
-            <i class="fas fa-arrow-right" id="buttonNext"></i>
-            <div class="carouselSlide">
-                <img src="../assets/trailerIMG8.png" id="lastClone">
-                <img src="../assets/trailerIMG1.png">
-                <img src="../assets/trailerIMG2.png">
-                <img src="../assets/trailerIMG3.png">
-                <img src="../assets/trailerIMG5.png">
-                <img src="../assets/trailerIMG8.png">
-                <img src="../assets/trailerIMG1.png" id="firstClone">
+        
+        <div class="newsDesc">
+            <div class="newsText">
+                <h1>Trailer de <br> House of the Dragon</h1>
+                <label>
+                    <h2>Série derivada de Game of Thrones, intitulada House of The Dragon, 
+                    finalmente ganha seu primeiro trailer e encanta os fãs com sua 
+                    atmosfera e enredo!</h2>
+                    <br><br>
+                    O vídeo, por mais que seja curto e não revele 
+                    muitos detalhes, deixou boas impressões e alcançou mais de 13 milhões 
+                    de visualizações. A estréia é prevista para 1 de Janeiro de 2022. 
+                    <br><br><br>
+                    História é baseada no livro Fogo e Sangue de George R. R. Martin 
+                    e se passa 200 anos antes dos acontecimentos de Game of Thrones. 
+                    Como o nome sugere, a série será focada na Casa Targaryen e 
+                    irá mostrar a desastrosa Guerra Civil que ficou conhecida como 
+                    <span>A Dança dos Dragões</span>. 
+                </label>
             </div>
         </div>
+
+        <div class="newsIMG">
+            <img src="../assets/imgNews.jpg" width="100%" height="102%">
+        </div>
     </div>
-<br><br><br><br><br><br><br><br><br><br>
+
     <div class="explore">
-        <h1>Explore nossa plataforma</h1>
+        <h1 class="exploreTitle">Explore nossa plataforma</h1>
+
+        <div class="textQuiz">
+            <h2>Descubra sua Casa em Game of Thrones!</h2>
+            <label>
+                Faça nossos quizes para testar seu <br> 
+                conhecimento na série e descobrir <br> 
+                que Casa mais combina com você! 
+            </label>
+        </div>
+
+        <div class="textCuriosity">
+            <h2>Curiosidades!</h2>
+            <label>
+                Veja curiosidades sobre os livros, 
+                séries e elenco do universo de 
+                As Crônicas de Gelo e Fogo! 
+            </label>
+        </div>
+
+        <div class="textAnalytics">
+            <h2>Dados e gráficos!</h2>
+            <label>
+                Consulte gráficos sobre as <br>
+                temporadas mais amadas da série <br>
+                e sobre quem os fãs gostariam de ver <br>
+                sentado no Trono de Ferro!
+            </label>
+        </div>
+
+        <div class="textAndMuchMore">
+            <h2>...E muito mais!</h2>
+            <label>
+                Basta cadastrar-se no nosso <br>
+                site ou entrar com sua conta <br>
+                para poder ter acesso a tudo isso <br>
+                e muito mais!
+            </label>
+        </div>
     </div>
+
+    <footer>
+        <div class="footerContent">
+            <h3>Game of Thrones</h3>
+            <p>Feito com amor e dedicação por um aluno da BandTec ❤</p>
+            <ul class="socialMedias">
+                <li><a href="https://github.com/daniloFerreira19"><i class="fa fa-github-square"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/danilo-ferreira-b9620620a/"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footerBottom">
+            <p>copyright&copy; 2020. Developed by <span>Danilo Ferreira</span></p>
+        </div>
+    </footer>
 </body>
-
-<script src="slideScript.js"></script>
-
+<script src="scriptModal.js"></script>
 <script>
     (() => {
         let menu = document.getElementById("menu");
@@ -74,5 +145,23 @@
             window.scrollY > 0 ? menu.classList.add("fixedHeader") : menu.classList.remove("fixedHeader");
         })
     })()
+
+    
+    let telaLogin = document.getElementById("loginButton");
+    let telaCadastro = document.getElementById("registerButton");
+    let homeButton = document.getElementById("homeButton");
+    let title = document.querySelector("title");
+
+    telaLogin.addEventListener("click", function() {
+        homeButton.classList.remove("current");
+        telaLogin.classList.add("current");
+        title.innerHTML = "GoT | Login"
+    })
+
+    telaCadastro.addEventListener("click", function() {
+        homeButton.classList.remove("current");
+        telaCadastro.classList.add("current");
+        title.innerHTML = "GoT | Cadastro"
+    })
 </script>
 </html>
