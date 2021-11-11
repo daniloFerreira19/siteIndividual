@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT | Curiosidades</title>
+    <link rel="stylesheet" href="curiosities.css">
+    <link rel="icon" href="../assets/iconGot.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="headerImg">
+        <div id="menu" class="header">
+            <h1>Game of Thrones</h1>
+            <ul>
+                <li id="curiositiesButton" class="current">Curiosidades</li>
+                <li id="quizButton">Quiz</li>
+                <li id="graphsButton">Graficos</li>
+                <li id="charactersButton">Personagens</li>
+            </ul>
+        </div>
+        <h1 class="title">Curiosidades</h1>
+    </div>
+
+    <div class="cardsContainer">
+        <div class="cardsImages">
+            <div class="leftCuriosities curi1">
+                <label>Lino Facioli, o Robin Arryn, <br>
+                    é brasileiro de Ribeirão Preto, <br> em São Paulo</label>
+                <img src="../assets/imgCuri1.png">
+            </div>
+
+            <div class="rightCuriosities curi2">
+                <label>A série já recebeu 110 <br> 
+                       indicações ao Emmy Awards. <br> 
+                       Destas, "Game of Thrones" levou <br> 
+                       38 troféus para casa, tornando-se <br> 
+                       recordista de prêmios.</label>
+                <img src="../assets/imgCuri2.jpg" style="margin-left: 45%;">
+            </div>
+
+            <div class="leftCuriosities curi3">
+                <label>
+                    Quando Tywin Lannister <br> 
+                    esfolou um cervo, aquilo <br> 
+                    realmente aconteceu. O ator <br> 
+                    até recebeu instruções de um <br> 
+                    açougueiro para matar o animal.
+                </label>
+                <img src="../assets/imgCuri3.jpg">
+            </div>
+
+            <div class="rightCuriosities curi4">
+                <label>
+                    O modo de vida de <br> 
+                    gatos e gansos <br> 
+                    inspiraram a criação <br> 
+                    dos dragões de Game of Thrones.
+                </label>
+                <img src="../assets/imgCuri4.jpg" style="margin-left: 45%;">
+            </div>
+
+            <div class="leftCuriosities curi5">
+                <label>
+                    O autor escreve <br> 
+                    sua obra no sistema <br> 
+                    operacional DOS, utilizado <br> 
+                    nas décadas de 1980 e 1990. <br> 
+                    Dessa forma, ele não se distrai <br> 
+                    navegando na internet.
+                </label>
+                <img src="../assets/imgCuri5.jpg">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerContent">
+            <p>Feito com amor e dedicação por um aluno da BandTec ❤</p>
+            <ul class="socialMedias">
+                <li><a href="https://github.com/daniloFerreira19"><i class="fa fa-github-square"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/danilo-ferreira-b9620620a/"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footerBottom">
+            <p>copyright&copy; 2020. Developed by <span>Danilo Ferreira</span></p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+    //Adicionando menu fixo com cor no scroll 
+    (() => {
+        let menu = document.getElementById("menu");
+        window.addEventListener("scroll", () => {
+            window.scrollY > 0 ? menu.classList.add("fixedHeader") : menu.classList.remove("fixedHeader");
+        })
+    })()
+
+    //Fazendo as curiosidades aparecerem com uma animação de acordo com o scroll
+
+    let firstCuriosity = document.querySelector(".curi1");
+    let secondCuriosity = document.querySelector(".curi2");
+    let thirdCuriosity = document.querySelector(".curi3");
+    let forthCuriosity = document.querySelector(".curi4");
+    let fifthCuriosity = document.querySelector(".curi5");
+
+    (() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 150) {
+                firstCuriosity.style.visibility = "visible";
+                firstCuriosity.classList.add('animate__animated', 'animate__slideInLeft');
+            } 
+            if (window.scrollY > 355) {
+                secondCuriosity.style.visibility = "visible";
+                secondCuriosity.classList.add('animate__animated', 'animate__slideInRight');
+            }
+            if (window.scrollY > 580) {
+                thirdCuriosity.style.visibility = "visible";
+                thirdCuriosity.classList.add('animate__animated', 'animate__slideInLeft');
+            }
+            if (window.scrollY > 780) {
+                forthCuriosity.style.visibility = "visible";
+                forthCuriosity.classList.add('animate__animated', 'animate__slideInRight');
+            }
+            if (window.scrollY > 1020) {
+                fifthCuriosity.style.visibility = "visible";
+                fifthCuriosity.classList.add('animate__animated', 'animate__slideInLeft');
+            }
+        })
+    })()
+</script>

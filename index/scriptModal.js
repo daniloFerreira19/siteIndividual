@@ -1,3 +1,5 @@
+//Código do pop up (modal) 
+
 let loginButton = document.getElementById("loginButton");
 let registerButton = document.getElementById("registerButton");
 let modalContainer = document.querySelector(".modalContainer");

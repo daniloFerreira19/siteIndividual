@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="../assets/iconGot.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <div class="modalContainer">
@@ -88,17 +89,15 @@
             <h2>Descubra sua Casa em Game of Thrones!</h2>
             <label>
                 Faça nossos quizes para testar seu <br> 
-                conhecimento na série e descobrir <br> 
-                que Casa mais combina com você! 
+                conhecimento na série! 
             </label>
         </div>
 
         <div class="textCuriosity">
             <h2>Curiosidades!</h2>
             <label>
-                Veja curiosidades sobre os livros, 
-                séries e elenco do universo de 
-                As Crônicas de Gelo e Fogo! 
+                Veja curiosidades sobre a série <br>
+                do universo de As Crônicas de Gelo e Fogo! 
             </label>
         </div>
 
@@ -113,19 +112,18 @@
         </div>
 
         <div class="textAndMuchMore">
-            <h2>...E muito mais!</h2>
+            <h2>...E mais!</h2>
             <label>
                 Basta cadastrar-se no nosso <br>
                 site ou entrar com sua conta <br>
                 para poder ter acesso a tudo isso <br>
-                e muito mais!
+                e mais!
             </label>
         </div>
     </div>
 
     <footer>
         <div class="footerContent">
-            <h3>Game of Thrones</h3>
             <p>Feito com amor e dedicação por um aluno da BandTec ❤</p>
             <ul class="socialMedias">
                 <li><a href="https://github.com/daniloFerreira19"><i class="fa fa-github-square"></i></a></li>
@@ -139,6 +137,7 @@
 </body>
 <script src="scriptModal.js"></script>
 <script>
+    //Adicionando menu fixo com cor no scroll 
     (() => {
         let menu = document.getElementById("menu");
         window.addEventListener("scroll", () => {
@@ -146,7 +145,7 @@
         })
     })()
 
-    
+    //Mudando a classe da li para ficar ativa se for clicada
     let telaLogin = document.getElementById("loginButton");
     let telaCadastro = document.getElementById("registerButton");
     let homeButton = document.getElementById("homeButton");
@@ -155,13 +154,40 @@
     telaLogin.addEventListener("click", function() {
         homeButton.classList.remove("current");
         telaLogin.classList.add("current");
-        title.innerHTML = "GoT | Login"
+        title.textContent = "GoT | Login"
     })
 
     telaCadastro.addEventListener("click", function() {
         homeButton.classList.remove("current");
         telaCadastro.classList.add("current");
-        title.innerHTML = "GoT | Cadastro"
+        title.textContent = "GoT | Cadastro"
     })
+
+    //Escondendo os textos e mostrando de acordo com o scroll 
+    let textQuiz = document.querySelector(".textQuiz");
+    let textCuriosity = document.querySelector(".textCuriosity");
+    let textAnalytics = document.querySelector(".textAnalytics");
+    let textAndMuchMore = document.querySelector(".textAndMuchMore");
+
+    (() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 1010) {
+                textQuiz.style.visibility = "visible";
+                textQuiz.classList.add('animate__animated', 'animate__fadeInLeft');
+            } 
+            if (window.scrollY > 1285) {
+                textCuriosity.style.visibility = "visible";
+                textCuriosity.classList.add('animate__animated', 'animate__fadeInRight');
+            }
+            if (window.scrollY > 1400) {
+                textAnalytics.style.visibility = "visible";
+                textAnalytics.classList.add('animate__animated', 'animate__fadeInLeft');
+            }
+            if (window.scrollY > 1580) {
+                textAndMuchMore.style.visibility = "visible";
+                textAndMuchMore.classList.add('animate__animated', 'animate__fadeInRight');
+            }
+        })
+    })()
 </script>
 </html>
