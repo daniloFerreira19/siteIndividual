@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoT | Curiosidades</title>
-    <link rel="stylesheet" href="curiosities.css">
+    <link rel="stylesheet" href="curiosidades.css">
     <link rel="icon" href="../assets/iconGot.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -16,7 +16,7 @@
             <h1>Game of Thrones</h1>
             <ul>
                 <li id="curiositiesButton" class="current">Curiosidades</li>
-                <li id="quizButton">Quiz</li>
+                <li id="quizButton"><a href="../telaQuiz/quiz.html">Quiz</a></li>
                 <li id="graphsButton">Graficos</li>
                 <li id="charactersButton">Personagens</li>
             </ul>
@@ -113,7 +113,7 @@
             if (window.scrollY > 150) {
                 firstCuriosity.style.visibility = "visible";
                 firstCuriosity.classList.add('animate__animated', 'animate__slideInLeft');
-            } 
+            }
             if (window.scrollY > 355) {
                 secondCuriosity.style.visibility = "visible";
                 secondCuriosity.classList.add('animate__animated', 'animate__slideInRight');

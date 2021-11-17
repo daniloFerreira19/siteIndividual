@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="../assets/iconGot.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="../apiCadastro/api-projeto-site/public/assets/js/funcoes.js"></script>
 </head>
 <body>
     <div class="modalContainer">
@@ -24,17 +25,27 @@
     </div>
     <div class="registerModalContainer">
         <div class="registerModal">
-            <h2>Preencha os campos</h2>
-            <label for="inputNome">Nome:</label>
-            <input type="text" id="inputNome">
-            <label for="inputEmail">Email:</label>
-            <input type="email" id="inputEmail">
-            <label for="inputSenha">Senha:</label>
-            <input type="password" id="inputSenha">
-            <label for="inputConfirmacao">Confirme sua senha:</label>
-            <input type="password" id="inputConfirmacao">
-            <button>Entrar</button>
-            <span class="closeRegister">X</span>
+            <div class="formulario">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    <label>Nome:</label><br>
+                    <input name="nome" type="text" placeholder="Jon Snow">
+                    <br><br>
+                    <label>Email:</label><br>
+                    <input name="email" type="text" placeholder="meuemail@provedor.com">
+                    <br><br>
+                    <label>Senha:</label><br>
+                    <input name="senha" type="password" placeholder="******">
+                    <br><br>
+                    <label>Confirme a senha</label><br>
+                    <input name="confirmacao-senha" type="password" placeholder="******">
+                    <br><br>
+                    <button class="btn">Cadastrar</button>
+                    <span class="closeRegister">X</span>
+                </form>
+            </div>
+            <div id="div_aguardar" class="loading-div" style="display: none;">
+                <img src="../apiCadastro/api-projeto-site/public/assets/circle-loading.gif" id="loading-gif">
+            </div>
     </div>
     </div>
     <div class="headerImg">
@@ -86,18 +97,18 @@
         <h1 class="exploreTitle">Explore nossa plataforma</h1>
 
         <div class="textQuiz">
-            <h2>Descubra sua Casa em Game of Thrones!</h2>
+            <h2>Descubra seu nível em Game of Thrones!</h2>
             <label>
-                Faça nossos quizes para testar seu <br> 
-                conhecimento na série! 
+                Faça nossos quizes para testar <br> 
+                seu conhecimento na série! 
             </label>
         </div>
 
         <div class="textCuriosity">
             <h2>Curiosidades!</h2>
             <label>
-                Veja curiosidades sobre a série <br>
-                do universo de As Crônicas de Gelo e Fogo! 
+                Veja curiosidades sobre a série do universo de <br> 
+                As Crônicas de Gelo e Fogo! 
             </label>
         </div>
 
@@ -116,8 +127,7 @@
             <label>
                 Basta cadastrar-se no nosso <br>
                 site ou entrar com sua conta <br>
-                para poder ter acesso a tudo isso <br>
-                e mais!
+                para poder ter acesso a tudo isso e mais!
             </label>
         </div>
     </div>
@@ -189,5 +199,76 @@
             }
         })
     })()
+
+    
+    // CODIGO DA API PARA O CADASTRO
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "")  {
+                console.log('nome está em branco')
+            }
+            if (email == "" )  {
+                console.log('email está em branco')
+            }
+            if (senha == "" )  {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "" )  {
+                console.log('confirmacaoSenha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
 </script>
 </html>

@@ -58,6 +58,12 @@ html {
     transition: 0.5s;
 }
 
+.header li a {
+    font-family: gotFont !important;
+    text-decoration: none;
+    color: #FCFEF0;
+}
+
 .header li:hover {
     font-weight: bolder;
     font-size: medium;
@@ -65,6 +71,8 @@ html {
 
 .header {
     transition: 0.50s;
+    width: 100%;
+    color: #FCFEF0;
 }
 
 .fixedHeader {
@@ -95,6 +103,7 @@ html {
 
 .cardsContainer {
     height: 185vh;
+    width: 97.8%;
     padding: 15px;
     background-color: #10141B;
     color: #FFFFFF;
@@ -142,7 +151,7 @@ html {
 
 footer {
     background-color: #242633;
-    width: 100%;
+    width: 98.5%;
     height: auto;
     padding: 10px;
     color: #FCFEF0;

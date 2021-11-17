@@ -65,13 +65,14 @@ html {
 
 .header {
     transition: 0.50s;
+    width: 98.5%;
 }
 
 .fixedHeader {
     position: fixed;
     background-color: #242633;
     height: 90px;
-    width: 100%;
+    width: 98%;
     padding: 15px;
     margin: 0;
     top: 0;
@@ -90,7 +91,7 @@ html {
     font-size: 40px;
     margin-left: 3%;
     color: #172a33;
-    text-shadow: 1.5px 1px #172a33;
+    text-shadow: 1.5px 1px rgb(156, 156, 156);
 }
 
 .modalContainer {
@@ -292,7 +293,7 @@ html {
 
 footer {
     background-color: #242633;
-    width: 100%;
+    width: 98.5%;
     height: auto;
     padding: 10px;
     color: #FCFEF0;
@@ -331,14 +332,6 @@ footer {
 .socialMedias a {
     text-decoration: none;
     color: #FCFEF0;
-}
-
-.socialMedias a i {
-    font-size: 30px;
-    transition: 3s;
-}
-.socialMedias a:hover i {
-    font-weight: bolder;
 }
 
 .footerBottom {
