@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT | Home</title>
+    <script src="assets/js/funcoes.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./images/iconGot.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="../apiCadastro/api-projeto-site/public/assets/js/funcoes.js"></script>
+</head>
+<body>
+    <div class="modalContainer">
+        <div class="modal">
+                <h2>Entre na sua conta</h2>
+                <form id="form_login" method="post" onsubmit="return entrar()">
+                    E-mail:
+                    <input name="email" type="text" placeholder="Login">
+                    <br>
+                    Senha:
+                    <input name="senha" type="password" placeholder="******">
+                    <br>
+                    <button class="btn" type="submit">Entrar</button>
+                    <span class="closeModal">X</span>
+                </form>
+        </div>
+    </div>
+    <div class="registerModalContainer">
+        <div class="registerModal">
+            <div class="formulario">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    <label>Nome:</label><br>
+                    <input name="nome" type="text" placeholder="Jon Snow">
+                    <br><br>
+                    <label>Email:</label><br>
+                    <input name="email" type="text" placeholder="meuemail@provedor.com"> 
+                    <br><br>
+                    <label>Senha:</label><br>
+                    <input name="senha" type="password" placeholder="******">
+                    <br><br>
+                    <label>Confirme a senha</label><br>
+                    <input name="confirmacao-senha" type="password" placeholder="******">
+                    <br><br>
+                    <button class="btn">Cadastrar</button>
+                    <span class="closeRegister">X</span>
+                </form>
+            </div>
+            <div id="div_aguardar" class="loading-div" style="display: none;">
+                <img src="../apiCadastro/api-projeto-site/public/assets/circle-loading.gif" id="loading-gif" style="display: none;">
+            </div>
+    </div>
+    </div>
+    <div class="headerImg">
+        <div id="menu" class="header">
+            <h1>Game of Thrones</h1>
+            <ul>
+                <li id="homeButton" class="current">Inicio</li>
+                <li id="loginButton">Login</li>
+                <li id="registerButton">Cadastro</li>
+            </ul>
+        </div>
+        <h2>
+            O site oficial <br> 
+            da série mais amada <br> 
+            do mundo!
+        </h2>
+    </div>
+
+    <div class="news">
+        <h1>Noticias de Game of Thrones</h1>
+        
+        <div class="newsDesc">
+            <div class="newsText">
+                <h1>Trailer de <br> House of the Dragon</h1>
+                <label>
+                    <h2>Série derivada de Game of Thrones, intitulada House of The Dragon, 
+                    finalmente ganha seu primeiro trailer e encanta os fãs com sua 
+                    atmosfera e enredo!</h2>
+                    <br><br>
+                    O vídeo, por mais que seja curto e não revele 
+                    muitos detalhes, deixou boas impressões e alcançou mais de 13 milhões 
+                    de visualizações. A estréia é prevista para 1 de Janeiro de 2022. 
+                    <br><br><br>
+                    História é baseada no livro Fogo e Sangue de George R. R. Martin 
+                    e se passa 200 anos antes dos acontecimentos de Game of Thrones. 
+                    Como o nome sugere, a série será focada na Casa Targaryen e 
+                    irá mostrar a desastrosa Guerra Civil que ficou conhecida como 
+                    <span>A Dança dos Dragões</span>. 
+                </label>
+            </div>
+        </div>
+
+        <div class="newsIMG">
+            <img src="./images/imgNews.jpg" width="100%" height="102%">
+        </div>
+    </div>
+
+    <div class="explore">
+        <h1 class="exploreTitle">Explore nossa plataforma</h1>
+
+        <div class="textQuiz">
+            <h2>Descubra seu nível em Game of Thrones!</h2>
+            <label>
+                Faça nossos quizes para testar <br> 
+                seu conhecimento na série! 
+            </label>
+        </div>
+
+        <div class="textCuriosity">
+            <h2>Curiosidades!</h2>
+            <label>
+                Veja curiosidades sobre a série do universo de <br> 
+                As Crônicas de Gelo e Fogo! 
+            </label>
+        </div>
+
+        <div class="textAnalytics">
+            <h2>Dados e gráficos!</h2>
+            <label>
+                Consulte gráficos sobre as <br>
+                temporadas mais amadas da série <br>
+                e sobre quem os fãs gostariam de ver <br>
+                sentado no Trono de Ferro!
+            </label>
+        </div>
+
+        <div class="textAndMuchMore">
+            <h2>...E mais!</h2>
+            <label>
+                Basta cadastrar-se no nosso <br>
+                site ou entrar com sua conta <br>
+                para poder ter acesso a tudo isso e mais!
+            </label>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerContent">
+            <p>Feito com amor e dedicação por um aluno da BandTec ❤</p>
+            <ul class="socialMedias">
+                <li><a href="https://github.com/daniloFerreira19"><i class="fa fa-github-square"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/danilo-ferreira-b9620620a/"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footerBottom">
+            <p>copyright&copy; 2020. Developed by <span>Danilo Ferreira</span></p>
+        </div>
+    </footer>
+</body>
+<script src="scriptModal.js"></script>
+<script>
+    //Adicionando menu fixo com cor no scroll 
+    (() => {
+        let menu = document.getElementById("menu");
+        window.addEventListener("scroll", () => {
+            window.scrollY > 0 ? menu.classList.add("fixedHeader") : menu.classList.remove("fixedHeader");
+        })
+    })()
+
+    //Mudando a classe da li para ficar ativa se for clicada
+    let telaLogin = document.getElementById("loginButton");
+    let telaCadastro = document.getElementById("registerButton");
+    let homeButton = document.getElementById("homeButton");
+    let title = document.querySelector("title");
+
+    telaLogin.addEventListener("click", function() {
+        homeButton.classList.remove("current");
+        telaLogin.classList.add("current");
+        title.textContent = "GoT | Login"
+    })
+
+    telaCadastro.addEventListener("click", function() {
+        homeButton.classList.remove("current");
+        telaCadastro.classList.add("current");
+        title.textContent = "GoT | Cadastro"
+    })
+
+    //Escondendo os textos e mostrando de acordo com o scroll 
+    let textQuiz = document.querySelector(".textQuiz");
+    let textCuriosity = document.querySelector(".textCuriosity");
+    let textAnalytics = document.querySelector(".textAnalytics");
+    let textAndMuchMore = document.querySelector(".textAndMuchMore");
+
+    (() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 1010) {
+                textQuiz.style.visibility = "visible";
+                textQuiz.classList.add('animate__animated', 'animate__fadeInLeft');
+            } 
+            if (window.scrollY > 1285) {
+                textCuriosity.style.visibility = "visible";
+                textCuriosity.classList.add('animate__animated', 'animate__fadeInRight');
+            }
+            if (window.scrollY > 1400) {
+                textAnalytics.style.visibility = "visible";
+                textAnalytics.classList.add('animate__animated', 'animate__fadeInLeft');
+            }
+            if (window.scrollY > 1580) {
+                textAndMuchMore.style.visibility = "visible";
+                textAndMuchMore.classList.add('animate__animated', 'animate__fadeInRight');
+            }
+        })
+    })()
+
+    
+    // CODIGO DA API PARA O CADASTRO
+    function limparFormularioCadastro() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "")  {
+                console.log('nome está em branco')
+            }
+            if (email == "" )  {
+                console.log('email está em branco')
+            }
+            if (senha == "" )  {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "" )  {
+                console.log('confirmacaoSenha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "index.html";
+                limparFormularioCadastro();
+                finalizarAguardar();
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+
+    // CODIGO DA API PARA O LOGIN
+    function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "curiosidades.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>
+</html>
