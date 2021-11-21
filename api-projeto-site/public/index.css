@@ -142,6 +142,13 @@ html {
     border-radius: 3px;
 }
 
+.modal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .registerModal {
     position: relative;
     background-color: #FCFEF0;
