@@ -24,6 +24,7 @@
                     <input name="senha" type="password" placeholder="******">
                     <br>
                     <button class="btn" type="submit">Entrar</button>
+                    <span class="loginErrorText">Usuário ou senha inválidos!</span>
                     <span class="closeModal">X</span>
                 </form>
         </div>
@@ -94,7 +95,7 @@
         </div>
 
         <div class="newsIMG">
-            <img src="./images/imgNews.jpg" width="100%" height="102%">
+            <img src="./images/imgNews.jpg" height="100%" width="100%">
         </div>
     </div>
 
@@ -186,7 +187,7 @@
 
     (() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 1010) {
+            if (window.scrollY > 1040) {
                 textQuiz.style.visibility = "visible";
                 textQuiz.classList.add('animate__animated', 'animate__fadeInLeft');
             } 
@@ -330,8 +331,7 @@
                 });
 
             } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
+                document.querySelector(".loginErrorText").style.display = "block";
 
                 resposta.text().then(texto => {
                     console.error(texto);

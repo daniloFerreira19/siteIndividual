@@ -112,25 +112,49 @@
 
     (() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 150) {
+            if (window.scrollY > 100) {
                 firstCuriosity.style.visibility = "visible";
+                firstCuriosity.classList.remove('animate__animated', 'animate__slideOutLeft');
                 firstCuriosity.classList.add('animate__animated', 'animate__slideInLeft');
+            } else {
+                firstCuriosity.classList.remove('animate__animated', 'animate__slideInLeft');
+                firstCuriosity.classList.add('animate__animated', 'animate__slideOutLeft');
             }
-            if (window.scrollY > 355) {
+
+            if (window.scrollY > 300) {
                 secondCuriosity.style.visibility = "visible";
+                secondCuriosity.classList.remove('animate__animated', 'animate__slideOutRight');
                 secondCuriosity.classList.add('animate__animated', 'animate__slideInRight');
+            } else {
+                secondCuriosity.classList.remove('animate__animated', 'animate__slideInRight');
+                secondCuriosity.classList.add('animate__animated', 'animate__slideOutRight');
             }
-            if (window.scrollY > 580) {
+
+            if (window.scrollY > 500) {
                 thirdCuriosity.style.visibility = "visible";
+                thirdCuriosity.classList.remove('animate__animated', 'animate__slideOutLeft');
                 thirdCuriosity.classList.add('animate__animated', 'animate__slideInLeft');
+            } else {
+                thirdCuriosity.classList.remove('animate__animated', 'animate__slideInLeft');
+                thirdCuriosity.classList.add('animate__animated', 'animate__slideOutLeft');
             }
-            if (window.scrollY > 780) {
+            
+            if (window.scrollY > 700) {
                 forthCuriosity.style.visibility = "visible";
+                forthCuriosity.classList.remove('animate__animated', 'animate__slideOutRight');
                 forthCuriosity.classList.add('animate__animated', 'animate__slideInRight');
+            } else {
+                forthCuriosity.classList.remove('animate__animated', 'animate__slideInRight');
+                forthCuriosity.classList.add('animate__animated', 'animate__slideOutRight');
             }
-            if (window.scrollY > 1020) {
+
+            if (window.scrollY > 900) {
                 fifthCuriosity.style.visibility = "visible";
+                fifthCuriosity.classList.remove('animate__animated', 'animate__slideOutLeft');
                 fifthCuriosity.classList.add('animate__animated', 'animate__slideInLeft');
+            } else {
+                fifthCuriosity.classList.remove('animate__animated', 'animate__slideInLeft');
+                fifthCuriosity.classList.add('animate__animated', 'animate__slideOutLeft');
             }
         })
     })()

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="quiz.css">
     <link rel="icon" href="./images/iconGot.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body onload="validarSessao()">
     <div class="headerImg">
@@ -28,26 +29,58 @@
 
     <div class="container">
         <div class="quizContainer">
-            <div id="questionContainer" class="hidden">
-                <div id="question">Pergunta</div>
-                <div id="answerButtons" class="btnGrid">
-                    <button class="btn">Resposta 1</button>
-                    <button class="btn">Resposta 2</button>
-                    <button class="btn">Resposta 3</button>
-                    <button class="btn">Resposta 4</button>
-                    <button class="btn">Resposta 5</button>
+            <div id="quizPrimeiraParte"> 
+                <br>
+                <h1>Teste seu conhecimento</h1>
+                <h1>em Game of Thrones!</h1>
+                <div id="home" class="flexColumn flexCenter">
+                    <button class="buttonStart"><h1>Jogar</h1></button>
+                    <button class="buttonScores"><h2>Pontuações</h2></button>
                 </div>
             </div>
 
-            <div class="controls">
-                <button id="startButton" class="start-btn btn">Start</button>
-                <button id="nextButton" class="next-btn btn hide">Next</button>
+            <div id="quizSegundaParte" style="display: none;">
+                <div id="game" class="justifyCenter flexColumn2">
+                    <div class="hudItem">
+                        <h2 class="hudPrefix">
+                            Pontuação: <span class="score">0</span>
+                        </h2>
+                    </div>
+                    <div id="hud">
+                        <div class="hudItem">
+                            <h2 id="progressText" class="hudPrefix"></h2>
+                            <div id="progressBar">
+                                <div id="progressBarFull"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="questionsContainer">
+                        <h3 id="question"></h3>
+                        <div class="choiceContainer">
+                            <div class="choiceText" data-number="1"></div>
+                        </div>
+
+                        <div class="choiceContainer">
+                            <div class="choiceText" data-number="2"></div>
+                        </div>
+
+                        <div class="choiceContainer">
+                            <div class="choiceText" data-number="3"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div id="quizFim">
+                <h1>Parabéns! Sua pontuação foi de <span class="score"></span></h1>
+            </div>
+
         </div>
+
     </div>
 </body>
 </html>
-
 <script>
     //Adicionando menu fixo com cor no scroll 
     (() => {
@@ -55,12 +88,29 @@
         window.addEventListener("scroll", () => {
             window.scrollY > 0 ? menu.classList.add("fixedHeader") : menu.classList.remove("fixedHeader");
         })
-    })()
+    })();
+
+    //Exibindo o quiz com efeito fadeIn 
+    (() => {
+        window.addEventListener("scroll", () => {
+            let telaQuiz = document.getElementById("quizPrimeiraParte");
+            if (window.scrollY > 300) {
+                telaQuiz.style.visibility = "visible";
+                telaQuiz.classList.add("animate__animated", "animate__fadeIn");
+            }
+        })
+    })();
+
+    //Exibindo as perguntas do quiz ao clicar no botao
+    let startQuiz = document.querySelector(".buttonStart");
+    startQuiz.addEventListener("click", function() {
+        document.getElementById("quizPrimeiraParte").style.display = "none";
+        document.getElementById("quizSegundaParte").style.display = "block";
+    })
 </script>
 
-<script src="quiz.js">
-    //JAVASCRIPT DO QUIZ
-</script>
+<!--JAVASCRIPT DO QUIZ-->
+<script src="quiz.js"></script>
 
 
 
