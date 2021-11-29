@@ -281,7 +281,50 @@ html {
     width: 0%;
 }
 
+.quizFimContainer {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
 
+.quizFim {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quizFim h1 {
+    text-decoration: underline;
+}
+
+.quizFim .levelText {
+    text-align: center;
+}
+
+.backToQuiz {
+    padding: 15px;
+    height: 60px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #242633;
+    color: #FCFEF0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.backToQuiz:hover {
+    background-color: #FCFEF0;
+    color: #242633;
+    height: 62px;
+    width: 162px;
+}
 
 
 

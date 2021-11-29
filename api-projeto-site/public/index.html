@@ -102,39 +102,36 @@
     <div class="explore">
         <h1 class="exploreTitle">Explore nossa plataforma</h1>
 
-        <div class="textQuiz">
-            <h2>Descubra seu nível em Game of Thrones!</h2>
-            <label>
-                Faça nossos quizes para testar <br> 
-                seu conhecimento na série! 
-            </label>
-        </div>
+        <div class="textsContainer">
+            <div class="textQuiz">
+                <h2>Teste seu conhecimento <br> em Game of Thrones!</h2>
+                <br>
+                <label>
+                    Faça nosso Quiz para testar <br> 
+                    seu conhecimento na série! 
+                </label>
+            </div>
 
-        <div class="textCuriosity">
-            <h2>Curiosidades!</h2>
-            <label>
-                Veja curiosidades sobre a série do universo de <br> 
-                As Crônicas de Gelo e Fogo! 
-            </label>
-        </div>
+            <div class="textCuriosity">
+                <h2>Curiosidades!</h2>
+                <br>
+                <label>
+                    Veja curiosidades sobre <br> 
+                    a série do universo de <br> 
+                    As Crônicas de Gelo e Fogo! 
+                </label>
+            </div>
 
-        <div class="textAnalytics">
-            <h2>Dados e gráficos!</h2>
-            <label>
-                Consulte gráficos sobre as <br>
-                temporadas mais amadas da série <br>
-                e sobre quem os fãs gostariam de ver <br>
-                sentado no Trono de Ferro!
-            </label>
-        </div>
-
-        <div class="textAndMuchMore">
-            <h2>...E mais!</h2>
-            <label>
-                Basta cadastrar-se no nosso <br>
-                site ou entrar com sua conta <br>
-                para poder ter acesso a tudo isso e mais!
-            </label>
+            <div class="textAndMuchMore">
+                <h2>...E mais!</h2>
+                <br>
+                <label>
+                    Basta cadastrar-se no nosso <br>
+                    site ou entrar com sua conta <br>
+                    para poder ter acesso a tudo <br>   
+                    isso e mais!
+                </label>
+            </div>
         </div>
     </div>
 
@@ -189,19 +186,29 @@
         window.addEventListener("scroll", () => {
             if (window.scrollY > 1040) {
                 textQuiz.style.visibility = "visible";
-                textQuiz.classList.add('animate__animated', 'animate__fadeInLeft');
-            } 
+                textQuiz.classList.remove('animate__animated', 'animate__fadeOutUp');
+                textQuiz.classList.add('animate__animated', 'animate__fadeInDownBig');
+            } else {
+                textQuiz.classList.remove('animate__animated', 'animate__fadeInDownBig');
+                textQuiz.classList.add('animate__animated', 'animate__fadeOutUp');
+            }
+
             if (window.scrollY > 1285) {
                 textCuriosity.style.visibility = "visible";
-                textCuriosity.classList.add('animate__animated', 'animate__fadeInRight');
+                textCuriosity.classList.remove('animate__animated', 'animate__fadeOutUp');
+                textCuriosity.classList.add('animate__animated', 'animate__fadeInDownBig');
+            } else {
+                textCuriosity.classList.remove('animate__animated', 'animate__fadeInDownBig');
+                textCuriosity.classList.add('animate__animated', 'animate__fadeOutUp');
             }
-            if (window.scrollY > 1400) {
-                textAnalytics.style.visibility = "visible";
-                textAnalytics.classList.add('animate__animated', 'animate__fadeInLeft');
-            }
+
             if (window.scrollY > 1580) {
                 textAndMuchMore.style.visibility = "visible";
-                textAndMuchMore.classList.add('animate__animated', 'animate__fadeInRight');
+                textAndMuchMore.classList.remove('animate__animated', 'animate__fadeOutUp');
+                textAndMuchMore.classList.add('animate__animated', 'animate__fadeInDownBig');
+            } else {
+                textAndMuchMore.classList.remove('animate__animated', 'animate__fadeInDownBig');
+                textAndMuchMore.classList.add('animate__animated', 'animate__fadeOutUp');
             }
         })
     })()

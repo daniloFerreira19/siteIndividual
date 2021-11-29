@@ -1,8 +1,12 @@
 const question = document.querySelector("#question");
 const choices = Array.from(document.querySelectorAll(".choiceText"));
 const progressText = document.querySelector("#progressText");
-const scoreText = document.querySelectorAll(".score");
+const scoreText = document.querySelector("#score");
+const scoreResult = document.querySelector("#scoreResult")
 const progressBarFull = document.querySelector("#progressBarFull");
+const quizEnd = document.querySelector(".quizFimContainer");
+const quizQuestions = document.querySelector("#quizSegundaParte");
+const level = document.querySelector(".levelText");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -95,9 +99,18 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
-        localStorage.setItem("mostRecentStore", score);
-         
-        alert("Fim");
+        quizQuestions.style.display = "none";
+        quizEnd.style.display = "block";
+
+        if (score <= 20) {
+            level.innerHTML = "Não conhece nada sobre a série!";
+        } else if (score <= 50) {
+            level.innerHTML = "Péssimo! Talvez seja melhor assistir mais uma vez...";
+        } else if (score < 80) {
+            level.innerHTML = "Bom. Parece que você sabe algumas coisas sobre a série";
+        } else {
+            level.innerHTML = "Parabéns! Você realmente é um fã de Game of Thrones!";
+        }
     }
 
     questionCounter++;
@@ -120,7 +133,6 @@ getNewQuestion = () => {
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
         if (!acceptingAnswers) return;
-        console.log(choice);
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
@@ -144,6 +156,7 @@ choices.forEach(choice => {
 incrementScore = num => {
     score += num;
     scoreText.innerHTML = score;
+    scoreResult.innerHTML = score;
 }
 
 startGame() 
