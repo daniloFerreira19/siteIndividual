@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT | Personagens</title>
+    <script src="./assets/js/funcoes.js"></script>
+    <link rel="stylesheet" href="personagens.css">
+    <link rel="icon" href="./images/iconGot.ico">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body onload="validarSessao()">
+    <div class="headerImg">
+        <div id="menu" class="header">
+            <h1>Game of Thrones</h1>
+            <ul>
+                <li id="curiositiesButton"><a href="curiosidades.html">Curiosidades</a></li>
+                <li id="quizButton"><a href="quiz.html">Quiz</a></li>
+                <li id="graphsButton" class="current">Personagens</li>
+            </ul>
+            <h3 class="buttonLogout" onclick="limparSessao()">SAIR</h3>
+            <h3 class="welcomeTitle">Olá, <span id="textoNomeUsuario"></span></h3>
+        </div>
+        <h1 class="title">Personagens</h1>
+    </div>
+
+    <div class="container">
+        <br><br><br>    
+        <h1 class="graphTitle">Escolha seu personagem favorito</h1>
+
+        <div class="firstCardsContainer">
+            <div class="card" onclick="curtir(1)">
+                <div class="cardTitle"><h3>Jon Snow</h3></div>
+                <div class="imgContainer">
+                    <!-- <img src="https://wallpaperaccess.com/full/482321.jpg" width="100%"> -->
+                </div>
+            </div>
+
+            <div class="card" onclick="curtir(2)">
+                <div class="cardTitle"><h3>Daenerys Targaryen</h3></div>
+            </div>
+
+            <div class="card" onclick="curtir(3)">
+                <div class="cardTitle"><h3>Tyrion Lannister</h3></div>
+            </div>
+        </div>
+
+        <div class="secondCardsContainer">
+            <div class="card" onclick="curtir(4)">
+                <div class="cardTitle"><h3>Arya Stark</h3></div>
+            </div>
+
+            <div class="card" onclick="curtir(5)">
+                <div class="cardTitle"><h3>Sam Tarly</h3></div>
+            </div>
+
+            <div class="card" onclick="curtir(6)">
+                <div class="cardTitle"><h3>Cersei Lannister</h3></div>
+            </div>
+        </div>
+
+        <div class="graph">
+            <canvas id="myChart" style="width: 60rem; height: 100%"></canvas>
+        </div>
+    </div>
+</body>
+
+<script>
+    //Adicionando menu fixo com cor no scroll 
+    (() => {
+        let menu = document.getElementById("menu");
+        window.addEventListener("scroll", () => {
+            window.scrollY > 0 ? menu.classList.add("fixedHeader") : menu.classList.remove("fixedHeader");
+        })
+    })();
+
+    //Código do ChartJS
+    fetch('/usuarios/listarAcessos').then(function (resposta) {
+      resposta.json().then(function (json) {
+         
+        var labels = [];
+        var data = [];
+        var total = 0;
+
+        for (var i = 0; i < json.length; i++) {
+           labels.push(json[i].nome);
+           data.push(json[i].qtd);
+           total += json[i].qtd;
+        }
+        
+        grafico(labels, data)
+      })
+    })
+
+    
+    function grafico(labels, data) {
+      const config = {
+         type: "bar",
+         data: {
+            labels: labels,
+            datasets: [
+               {
+                  label: "Personagem",
+                  data: data,
+                  backgroundColor: "rgb(8, 46, 129)",
+               }
+            ]
+         },
+         options: {
+            maintainAspectRatio: false
+         }
+      }
+      const myChartLine = new Chart(document.getElementById("myChart").getContext("2d"), config);
+    }
+
+    function curtir(idPersonagem) {
+        fetch("/usuarios/curtir", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuario: sessionStorage.ID_USUARIO,
+                idPersonagem: idPersonagem,
+            })
+        }).then(function (resposta) {
+            alert('Personagem escolhido!');
+      });
+
+      setTimeout(() => {
+        location.reload();
+      }, 1000);
+    }
+</script>

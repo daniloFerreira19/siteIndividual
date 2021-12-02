@@ -27,12 +27,6 @@ html {
     box-sizing: border-box;
 }
 
-:root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
-}
-
 .headerImg {
     background-image: url(https://www.itl.cat/pngfile/big/2-24968_game-of-thrones-dragon-backgrounds-game-of-thrones.jpg);
     height: 88vh;
@@ -68,7 +62,7 @@ html {
     display: flex;
     list-style: none;
     width: 40%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 2%;
     margin-right: auto;
     margin-left: auto;
@@ -120,10 +114,8 @@ html {
     cursor: pointer;
     margin-left: 94%;
     margin-top: -6%;
-}
-
-.buttonLogout a {
     color: #FCFEF0;
+    text-decoration: underline;
 }
 
 .container {
@@ -279,6 +271,21 @@ html {
     height: 100%;
     background-color: rgb(11, 223, 36);
     width: 0%;
+}
+
+.pontContainer {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.pontuacoes {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .quizFimContainer {

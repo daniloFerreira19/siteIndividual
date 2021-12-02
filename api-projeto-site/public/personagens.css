@@ -1,0 +1,186 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: gotFont;
+    src: url(./images/fontGoT.ttf);
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url(./images/fontMontSerrat.otf);
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url(./images/MontserratAlternates-Light.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+} 
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+.headerImg {
+    background-image: url(https://www.wallpaperflare.com/static/483/209/229/game-of-thrones-the-others-the-wall-winter-wallpaper.jpg);
+    height: 88vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+    padding: 15px;
+}  
+
+.headerImg .title {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 15%;
+    line-height: 65px;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.header {
+    transition: 0.50s;
+    width: 98.5%;
+}
+
+.header h1 {
+    font-weight: bolder;
+    text-align: center;
+    font-family: gotFont !important;
+    text-decoration: underline;
+    color: #FCFEF0;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: small;
+    color: #FCFEF0;
+}
+
+.header li {
+    font-family: gotFont !important;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.header li a {
+    font-family: gotFont !important;
+    text-decoration: none;
+    color: #FCFEF0;
+}
+
+.header li:hover {
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.fixedHeader {
+    position: fixed;
+    background-color: #242633;
+    height: 90px;
+    width: 98%;
+    padding: 15px;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.current {
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.welcomeTitle {
+    cursor: pointer;
+    margin-top: -2%;
+    color: #FCFEF0;
+}
+
+.buttonLogout {
+    cursor: pointer;
+    margin-left: 94%;
+    margin-top: -6%;
+    color: #FCFEF0;
+    text-decoration: underline;
+}
+
+.container {
+    height: 180vh;
+    width: 100%;
+    background-color: #10141B;
+}
+
+.graphTitle {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: gotFont !important;
+    color: #FCFEF0;
+}
+
+.graph {
+    width: 68rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 9.5%;
+    margin-top: 2%;
+}
+
+.firstCardsContainer {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.secondCardsContainer {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card {
+    width: 20%;
+    height: 80%;
+    border: 2px solid rgb(8, 46, 129);
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    width: 22%;
+    height: 85%;
+}
+
+.cardTitle {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(14, 61, 163);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -27,8 +27,31 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
+function curtir(idUsuario, idPersonagem) {
+    var instrucao = `
+        INSERT INTO curtidas VALUES(${idUsuario}, ${idPersonagem}, 1);
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function listarAcessos() {
+    var instrucao = `
+        SELECT 
+            nome, 
+            count(fkPersonagem) as qtd 
+        FROM curtidas as curt 
+            join personagens as perso 
+            on curt.fkPersonagem = perso.id group by perso.id ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    curtir,
+    listarAcessos
 };

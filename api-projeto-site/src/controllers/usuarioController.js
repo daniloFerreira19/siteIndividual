@@ -89,9 +89,50 @@ function cadastrar(req, res) {
     }
 }
 
+function curtir(req, res) {
+    var idUsuario = req.body.idUsuario;
+    var idPersonagem = req.body.idPersonagem;
+
+    usuarioModel.curtir(idUsuario, idPersonagem)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
+function listarAcessos(req, res) {
+    usuarioModel.listarAcessos()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,   
-    testar
+    testar,
+    curtir,
+    listarAcessos
 }

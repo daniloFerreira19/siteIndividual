@@ -44,7 +44,7 @@ html {
     display: flex;
     list-style: none;
     width: 40%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 2%;
     margin-right: auto;
     margin-left: auto;
@@ -100,12 +100,10 @@ html {
 
 .buttonLogout {
     cursor: pointer;
-    margin-left: 94%;
+    margin-left: 94.5%;
     margin-top: -6%;
-}
-
-.buttonLogout a {
     color: #FCFEF0;
+    text-decoration: underline;
 }
 
 .headerImg .title {

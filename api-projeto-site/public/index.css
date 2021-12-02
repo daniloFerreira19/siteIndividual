@@ -273,6 +273,10 @@ html {
     align-items: center;
 }
 
+.textsContainer label {
+    text-align: justify;
+}
+
 .textQuiz {
     visibility: hidden;
 }
