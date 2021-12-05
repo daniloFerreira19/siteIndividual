@@ -15,7 +15,6 @@ function validarSessao() {
     
     if (email != null && nome != null) {
         document.getElementById("textoNomeUsuario").innerHTML = capitalizedName;
-        // finalizarAguardar();
     } else {
         window.location = "../login.html";
     }
@@ -24,7 +23,6 @@ function validarSessao() {
 function limparSessao() {
     // aguardar();
     sessionStorage.clear();
-   // finalizarAguardar();
     window.location = "index.html";
 }
 
@@ -32,16 +30,6 @@ function limparSessao() {
 function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
 }
-
-function finalizarAguardar(texto) {
-    var divAguardar = document.getElementById("div_aguardar");
-    
-    var divErrosLogin = document.getElementById("div_erros_login");
-    if(texto) {
-        divErrosLogin.innerHTML = texto;
-    }
-}
-
 
 // modal
 function mostrarModal() {

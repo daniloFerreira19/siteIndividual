@@ -29,7 +29,7 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;   
-    padding: 15px;
+    padding: 0.938rem;
 }   
 
 .header h1 {
@@ -71,9 +71,9 @@ html {
 .fixedHeader {
     position: fixed;
     background-color: #242633;
-    height: 90px;
+    height: 5.625rem;
     width: 98%;
-    padding: 15px;
+    padding: 0.938rem;
     margin: 0;
     top: 0;
     left: 0;
@@ -88,13 +88,13 @@ html {
 .headerImg h2 {
     display: flex;
     margin-top: 8%;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-left: 3%;
     color: #172a33;
-    text-shadow: 1.5px 1px rgb(156, 156, 156);
+    text-shadow: 0.094rem 0.063rem rgb(156, 156, 156);
 }
 
-.modalContainer {
+.popUpContainer {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -107,7 +107,7 @@ html {
     transition: visibility 0s opacity 0.5s;
 }
 
-.registerModalContainer {
+.registerContainer {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -123,55 +123,130 @@ html {
 .containerActive {
     visibility: visible;
     opacity: 1;
+    z-index: 1000;
 }
 
 .registerActive {
     visibility: visible;
     opacity: 1;
+    z-index: 1000;
 }
 
-.modal {
-    position: relative;
-    background-color: #FCFEF0;
-    width: 35%;
-    height: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 3px;
+.popUp {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
 }
 
-.modal form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.register {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
 }
 
-.registerModal {
-    position: relative;
-    background-color: #FCFEF0;
-    width: 40%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 3px;
+.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.modal button {
-    padding: 10px 30px;
-    background-color: #2980b9;
-    color: white;
+.popUp .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
     cursor: pointer;
 }
 
-.registerModal button {
-    padding: 10px 30px;
-    background-color: #2980b9;
-    color: white;
+.closeRegister {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    margin-left: -2%;
+}
+
+.form form button {
+    width: 100%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+.form h2 {
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.form .formElements {
+    margin: 15px 0px;
+}
+
+.form .formElements label {
+    font-size: 14px;
+    color: #222;
+}
+
+.form .formElements input {
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #eee;
+}
+
+.form .formElements i {
+    position: absolute;
+    right: 15px;
+    transform: translate(0, -50%);
+    top: 59%;
+    cursor: pointer;
+}
+
+.form .formElements button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -182,31 +257,15 @@ html {
     display: none;
 }
 
-.closeModal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-weight: bolder;
-    cursor: pointer;
-}
-
-.closeRegister {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-weight: bolder;
-    cursor: pointer;
-}
-
 .news {
     background-color: #FCFEF0;
     height: 140vh;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .news h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-family: gotFont !important;
     margin-top: 3%;
 }
@@ -214,16 +273,16 @@ html {
 .newsDesc {
     margin-top: 5%;
     margin-left: 7%;
-    height: 620px;
-    width: 550px;
-    padding: 25px;
+    height: 38.75rem;
+    width: 34.375rem;
+    padding: 1.563rem;
     background-color: #10141B;
     color: #FCFEF0;
 }
 
 .newsText {
-    height: 700px;
-    width: 500px;
+    height: 43.75rem;
+    width: 31.25rem;
     margin: auto;
 }
 
@@ -238,19 +297,31 @@ html {
     font-family: montserratLight;
 }
 
-.newsIMG {
-    height: 655px;
-    width: 570px;
+#slider {
+    height: 40.9rem;
+    width: 35.6rem;
     margin-left: 50%;
     margin-top: -48%;
-    display: grid;
-    place-items: center;
-    background-color: blue;
+    position: relative;
+    z-index: 1;
+}
+
+#slider img{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 800ms;
+}
+
+#slider img.selected { 
+    opacity: 1;
 }
 
 .explore {
     height: 120vh;
-    padding: 20px;
+    padding: 1.25rem;
     background-image: url(https://wallpapercave.com/wp/wp4759509.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -259,7 +330,7 @@ html {
 
 .explore h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-family: gotFont !important;
     margin-top: 0.5%;
 }
@@ -318,7 +389,7 @@ footer {
     background-color: #242633;
     width: 98.5%;
     height: auto;
-    padding: 10px;
+    padding: 0.625rem;
     color: #FCFEF0;
 }
 
@@ -334,10 +405,10 @@ footer {
 }
 
 .footerContent p {
-    max-width: 450px;
-    margin: 7px auto;
-    line-height: 23px;
-    font-size: 14px;
+    max-width: 28.125rem;
+    margin: 0.438rem auto;
+    line-height: 1.438rem;
+    font-size: 0.875rem;
 }
 
 .socialMedias {
@@ -349,24 +420,24 @@ footer {
 }
 
 .socialMedias li {
-    margin: 0 7px;
+    margin: 0 0.438rem;
 }
 
 .socialMedias a {
     text-decoration: none;
     color: #FCFEF0;
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 .footerBottom {
     width: 100%;
-    padding: 15px 0;
+    padding: 0.938rem 0;
     text-align: center;
 }
 
 .footerBottom p {
-    font-size: 14px;
-    word-spacing: 2px;
+    font-size: 0.875rem;
+    word-spacing: 0.125rem;
     text-transform: capitalize;
 }
 

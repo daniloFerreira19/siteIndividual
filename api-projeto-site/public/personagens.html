@@ -32,37 +32,40 @@
         <h1 class="graphTitle">Escolha seu personagem favorito</h1>
 
         <div class="firstCardsContainer">
-            <div class="card" onclick="curtir(1)">
+            <div class="card" onclick="curtir(1)"><a href="#graph">
                 <div class="cardTitle"><h3>Jon Snow</h3></div>
-                <div class="imgContainer">
-                    <!-- <img src="https://wallpaperaccess.com/full/482321.jpg" width="100%"> -->
-                </div>
-            </div>
+                <div class="imgContainer imgJon"></div>
+            </a></div>
 
-            <div class="card" onclick="curtir(2)">
+            <div class="card" onclick="curtir(2)"><a href="#graph">
                 <div class="cardTitle"><h3>Daenerys Targaryen</h3></div>
-            </div>
+                <div class="imgContainer imgDany"></div>
+            </a></div>
 
-            <div class="card" onclick="curtir(3)">
+            <div class="card" onclick="curtir(3)"><a href="#graph">
                 <div class="cardTitle"><h3>Tyrion Lannister</h3></div>
-            </div>
+                <div class="imgContainer imgTyrion"></div>
+            </a></div>
         </div>
 
         <div class="secondCardsContainer">
-            <div class="card" onclick="curtir(4)">
+            <div class="card" onclick="curtir(4)"><a href="#graph">
                 <div class="cardTitle"><h3>Arya Stark</h3></div>
-            </div>
+                <div class="imgContainer imgArya"></div>
+            </a></div>
 
-            <div class="card" onclick="curtir(5)">
+            <div class="card" onclick="curtir(5)"><a href="#graph">
                 <div class="cardTitle"><h3>Sam Tarly</h3></div>
-            </div>
+                <div class="imgContainer imgSam"></div>
+            </a></div>
 
-            <div class="card" onclick="curtir(6)">
+            <div class="card" onclick="curtir(6)"><a href="#graph">
                 <div class="cardTitle"><h3>Cersei Lannister</h3></div>
-            </div>
+                <div class="imgContainer imgCersei"></div>
+            </a></div>
         </div>
 
-        <div class="graph">
+        <div id="graph">
             <canvas id="myChart" style="width: 60rem; height: 100%"></canvas>
         </div>
     </div>
@@ -103,9 +106,9 @@
             labels: labels,
             datasets: [
                {
-                  label: "Personagem",
+                  label: "Personagens mais votados",
                   data: data,
-                  backgroundColor: "rgb(8, 46, 129)",
+                  backgroundColor: "#314659",
                }
             ]
          },
@@ -127,11 +130,11 @@
                 idPersonagem: idPersonagem,
             })
         }).then(function (resposta) {
-            alert('Personagem escolhido!');
+            
       });
 
       setTimeout(() => {
         location.reload();
-      }, 1000);
+      }, 500);
     }
 </script>
