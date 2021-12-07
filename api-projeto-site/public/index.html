@@ -161,7 +161,7 @@
 
     <footer>
         <div class="footerContent">
-            <p>Feito com amor e dedicação por um aluno da BandTec ❤</p>
+            <p>Feito com amor e dedicação por um aluno da SPTech ❤</p>
             <ul class="socialMedias">
                 <li><a href="https://github.com/daniloFerreira19"><i class="fa fa-github-square"></i></a></li>
                 <li><a href="https://www.linkedin.com/in/danilo-ferreira-b9620620a/"><i class="fa fa-linkedin-square"></i></a></li>
@@ -377,7 +377,7 @@
                 Swal.fire({
                 position: 'top-center',
                 icon: 'success',
-                title: 'Cadastrado com sucesso!',
+                title: 'Cadastrado(a) com sucesso!',
                 showConfirmButton: false,
                 timer: 1500
                 });
@@ -454,12 +454,15 @@
 
                     setTimeout(function () {
                         window.location = "curiosidades.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 500); // apenas para exibir o loading
 
                 });
 
             } else {
                 document.querySelector(".loginErrorText").style.display = "block";
+                setTimeout(() => {
+                    document.querySelector(".loginErrorText").style.display = "none";
+                }, 2000);
 
                 resposta.text().then(texto => {
                     console.error(texto);

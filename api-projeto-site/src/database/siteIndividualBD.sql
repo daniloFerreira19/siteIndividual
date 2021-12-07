@@ -1,5 +1,8 @@
 USE siteIndividual;
-SELECT * FROM usuario;
+SELECT 
+    *
+FROM
+    usuario;
 
 CREATE TABLE personagens (
 	id int primary key auto_increment, 

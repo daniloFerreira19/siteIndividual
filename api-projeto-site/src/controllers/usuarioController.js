@@ -111,6 +111,10 @@ function curtir(req, res) {
 
 }
 
+function pegarPontuacao() {
+    
+}
+
 function listarAcessos(req, res) {
     usuarioModel.listarAcessos()
         .then(function (resultado) {
