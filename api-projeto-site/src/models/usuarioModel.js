@@ -35,8 +35,6 @@ function curtir(idUsuario, idPersonagem) {
     return database.executar(instrucao);
 }
 
-
-
 function listarAcessos() {
     var instrucao = `
         SELECT 

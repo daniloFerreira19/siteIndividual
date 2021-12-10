@@ -5,16 +5,18 @@ FROM
     usuario;
 
 CREATE TABLE personagens (
-	id int primary key auto_increment, 
-    nome varchar(50)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50)
 );
 
 CREATE TABLE curtidas (
-	fkUsuario int,
-    foreign key(fkUsuario) references usuario(id),
-    fkPersonagem int,
-    foreign key(fkPersonagem) references personagens(id),
-    curtidas int
+    fkUsuario INT,
+    FOREIGN KEY (fkUsuario)
+        REFERENCES usuario (id),
+    fkPersonagem INT,
+    FOREIGN KEY (fkPersonagem)
+        REFERENCES personagens (id),
+    curtidas INT
 );
 
 truncate table curtidas;
@@ -27,15 +29,45 @@ INSERT INTO personagens (nome) VALUES
 	("Sam Tarly"),
 	("Cersei Lannister");
 
-select * from personagens;
-select * from curtidas;
-SELECT
-	nome,
-	count(fkPersonagem) as Quantidade
-from curtidas as curt
-	join personagens as perso
-	on curt.fkPersonagem = perso.id group by perso.id;	
+SELECT 
+    *
+FROM
+    personagens;
+SELECT 
+    *
+FROM
+    curtidas;
+SELECT 
+    nome, COUNT(fkPersonagem) AS Quantidade
+FROM
+    curtidas AS curt
+        JOIN
+    personagens AS perso ON curt.fkPersonagem = perso.id
+GROUP BY perso.id;	
     
+CREATE TABLE pontuacoes (
+	fkUsuario INT,
+    FOREIGN KEY (fkUsuario) 
+		REFERENCES usuario (id),
+	pontuacao INT 
+);
+
+SELECT 
+	*
+FROM
+	pontuacoes;
+    
+insert into pontuacoes values 
+	(2, 10),
+    (3, 50);
+    
+SELECT
+            nome,
+            pontuacao 
+        FROM pontuacoes 
+            JOIN usuario 
+            ON pontuacoes.fkUsuario = usuario.id
+            ORDER BY pontuacao DESC;
     
     
     

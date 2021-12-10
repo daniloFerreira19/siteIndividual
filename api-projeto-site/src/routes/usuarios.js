@@ -24,7 +24,6 @@ router.post("/curtir", function (req, res) {
 });
 
 router.get("/listarAcessos", function (req, res) {
-    console.log();
     usuarioController.listarAcessos(req, res);
 });
   

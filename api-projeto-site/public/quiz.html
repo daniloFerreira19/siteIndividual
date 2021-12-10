@@ -34,7 +34,7 @@
                 <h1>em Game of Thrones!</h1>
                 <div id="home" class="flexColumn flexCenter">
                     <button class="buttonStart"><h1>Jogar</h1></button>
-                    <button class="buttonScores"><h2>Pontuações</h2></button>
+                    <button class="buttonScores" onclick="getScore(getId())"><h2>Pontuações</h2></button>
                 </div>
             </div>
 
@@ -74,8 +74,9 @@
             <div class="pontContainer">
                 <div class="pontuacoes">
                     <h1>Ranking</h1>
-                    <h2>Maior: <span id="textoMaiorPontuacao"></span></h2>
-                    <h2>Menor: <span id="textoMenorPontuacao"></span></h2>
+                    <div id="ranking">
+
+                    </div>
                     <button class="backToQuiz"><h2>Voltar</h2></button>
                 </div>
             </div>
@@ -124,8 +125,7 @@
     let resultadoQuiz = document.querySelector(".quizFimContainer");
     let inicioQuiz = document.querySelector("#quizPrimeiraParte");
     botaoVoltar.addEventListener("click", function() {
-        resultadoQuiz.style.display = "none";
-        inicioQuiz.style.display = "block";
+        location.reload();
     })
 
     // Exibindo tela de pontuações
@@ -136,8 +136,7 @@
         scoresDiv.style.display = "block";
     })
     botaoVoltar.addEventListener("click", function() {
-        scoresDiv.style.display = "none";
-        inicioQuiz.style.display = "block";
+        location.reload();
     })
 </script>
 
